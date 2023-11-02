@@ -19,7 +19,7 @@ function writePassword() {
   if (capCheck.checked){
     numbOfCaps = getNum(3)
     for (let i=0; i < numbOfCaps; i++){
-      let x = getNum(passwordSize)
+      let x = getNum(passwordSize) - 1
       indexOfCaps.push(x)
     }
   }
@@ -28,9 +28,9 @@ function writePassword() {
   if (spcCheck.checked){
     numbOfSpecials = getNum(3)
     for (let i=0; i < numbOfSpecials; i++){
-      let x = getNum(passwordSize)
+      let x = getNum(passwordSize) - 1
       while(indexOfCaps.includes(x)){
-        x = getNum(passwordSize)
+        x = getNum(passwordSize) - 1
       }
       indexOfSpecials.push(x)
     }
@@ -40,9 +40,9 @@ function writePassword() {
   if (numCheck.checked){
     numbOfNumbers = getNum(3)
     for (let i=0; i < numbOfNumbers; i++){
-      let x = getNum(passwordSize)
+      let x = getNum(passwordSize) - 1
       while(indexOfCaps.includes(x) || indexOfSpecials.includes(x)){
-        x = getNum(passwordSize)
+        x = getNum(passwordSize) - 1
       }
       indexOfNumbers.push(x)
     }
